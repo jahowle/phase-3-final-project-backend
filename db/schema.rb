@@ -14,34 +14,29 @@ ActiveRecord::Schema.define(version: 2022_12_12_235247) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "need_id"
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.integer "neighbor_id"
-    t.integer "partner_id"
   end
 
   create_table "needs", force: :cascade do |t|
     t.string "description"
     t.integer "amount"
     t.integer "neighbor_id"
-    t.string "category"
+    t.integer "category_id"
   end
 
   create_table "neighbors", force: :cascade do |t|
     t.string "name"
     t.string "bio"
     t.integer "location_id"
-    t.integer "need_id"
     t.integer "partner_id"
   end
 
   create_table "partners", force: :cascade do |t|
     t.string "name"
     t.integer "location_id"
-    t.integer "neighbor_id"
   end
 
 end

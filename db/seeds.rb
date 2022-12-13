@@ -1,5 +1,18 @@
 puts "🌱 Seeding spices..."
 
-# Seed your database here
+
+
+
+
+10.times do
+
+    Neighbor.create(
+        name: Faker::Name.name
+        bio: Faker::Lorem.paragraph
+        location_id: Location.pluck(:id).sample
+        partner_id: Partner.pluck(:id).sample
+        )
+
+end
 
 puts "✅ Done seeding!"

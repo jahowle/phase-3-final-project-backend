@@ -4,7 +4,7 @@ class CreateNeeds < ActiveRecord::Migration[6.1]
       t.string :description
       t.integer :amount
       t.integer :neighbor_id
-      t.string :category
+      t.integer :category_id
     end
   end
 end
