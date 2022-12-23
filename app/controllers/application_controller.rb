@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 
   get '/needs' do
     needs = Need.all 
-    needs.to_json
+    needs.to_json(include: [:neighbor, :category])
    end
 
    get '/partners' do
