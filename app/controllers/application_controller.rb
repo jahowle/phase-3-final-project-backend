@@ -12,6 +12,19 @@ class ApplicationController < Sinatra::Base
     needs.to_json(include: [:neighbor, :category])
    end
 
+   get '/needs/:id' do
+    need  = Need.find(params[:id])
+    need.to_json
+   end
+
+   patch '/needs/:id' do
+    need = Need.find(params[:id])
+    need.update(
+      funded: params[:funded],
+    )
+    need.to_json
+  end
+
    get '/partners' do
     partners = Partner.all 
     partners.to_json
