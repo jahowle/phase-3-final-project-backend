@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_12_235247) do
+ActiveRecord::Schema.define(version: 2022_12_23_185823) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_12_12_235247) do
     t.integer "amount"
     t.integer "neighbor_id"
     t.integer "category_id"
+    t.boolean "funded"
   end
 
   create_table "neighbors", force: :cascade do |t|

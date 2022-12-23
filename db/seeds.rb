@@ -66,7 +66,8 @@ end
         description: ["Help with food", "Help with bills", "Help with car", "Help with textbooks", "Help with medical", "Help with shelter", "Help with clothing", "Help with transport", "Help with furnishings", "Help with groceries"].sample,
         amount: rand(1..400),
         neighbor_id: Neighbor.pluck(:id).sample,
-        category_id: Category.pluck(:id).sample
+        category_id: Category.pluck(:id).sample,
+        funded: false
     )
 
 end
