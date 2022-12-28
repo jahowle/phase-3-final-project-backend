@@ -9,6 +9,18 @@ class ApplicationController < Sinatra::Base
    neighbors.to_json
   end
 
+  post '/neighbors' do
+    neighbor = Neighbor.create(
+      name: params[:name],
+      bio: params[:bio],
+      location_id: params[:location_id],
+      partner_id: params[:partner_id]
+    )
+
+    neighbor.to_json
+
+  end
+
   post '/needs' do
     need = Need.create(
       description: params[:description],
@@ -17,6 +29,7 @@ class ApplicationController < Sinatra::Base
       category_id: params[:category_id],
       funded: false
     )
+    need.to_json
 
   end
 
