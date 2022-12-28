@@ -7,6 +7,9 @@ class ApplicationController < Sinatra::Base
    neighbors.to_json
   end
 
+  post '/needs' do
+  end
+
   get '/needs' do
     needs = Need.all 
     needs.to_json(include: [:neighbor, :category])
