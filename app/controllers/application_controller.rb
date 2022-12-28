@@ -8,6 +8,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/needs' do
+    need = Need.create(
+      description: params[:description],
+      amount: params[:amount],
+      category_id: params[category_id],
+      neighbor_id: params[neighbor_id]
+
+    )
   end
 
   get '/needs' do
