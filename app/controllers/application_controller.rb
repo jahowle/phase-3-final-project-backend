@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
@@ -11,10 +13,11 @@ class ApplicationController < Sinatra::Base
     need = Need.create(
       description: params[:description],
       amount: params[:amount],
-      category_id: params[category_id],
-      neighbor_id: params[neighbor_id]
-
+      neighbor_id: params[:neighbor_id],
+      category_id: params[:category_id],
+      funded: false
     )
+
   end
 
   get '/needs' do
