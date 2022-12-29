@@ -33,6 +33,12 @@ class ApplicationController < Sinatra::Base
 
   end
 
+  delete '/needs/:id' do
+    need = Need.find(params[:id])
+    need.destroy
+    need.to_json
+  end
+
   get '/needs' do
     needs = Need.all 
     needs.to_json(include: [:neighbor, :category])
