@@ -43,12 +43,31 @@ Category.create(
 )
 
 
-5.times do
-    Partner.create(
-        name: ["Boys and Girls Club", "United Way", "Pink Daisy Project", "Share Fund, Inc", "Bridges Homeward"].sample,
-        location_id: Location.pluck(:id).sample
+
+Partner.create(
+    name: "Boys and Girls Club",
+    location_id: Location.pluck(:id).sample
     )
-end
+    Partner.create(
+        name: "United Way",
+        location_id: Location.pluck(:id).sample
+        )
+        Partner.create(
+            name: "Pink Daisy Project",
+            location_id: Location.pluck(:id).sample
+            )
+            Partner.create(
+                name: "Share Fund, Inc",
+                location_id: Location.pluck(:id).sample
+                )
+                Partner.create(
+                    name: "Bridges Homeward",
+                    location_id: Location.pluck(:id).sample
+                    )
+                                        
+
+
+
 
 10.times do
 
